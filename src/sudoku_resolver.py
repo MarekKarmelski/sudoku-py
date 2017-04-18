@@ -27,7 +27,6 @@ class SudokuResolver:
 
     def resolve_board(self):
         """Resolve sudoku board."""
-
         sq = []
         sq1 = self.get_subsquare(0, 3, 0, 3)
         self.fill_help_board(0, 3, 0, 3, 0)
@@ -56,15 +55,12 @@ class SudokuResolver:
         sq9 = self.get_subsquare(6, 9, 6, 9)
         self.fill_help_board(6, 9, 6, 9, 8)
         sq.append(self.allowed_in_square(sq9))
-
         rows = []
         for i in range(0, 9):
             rows.append(self.allowed_in_row(self.sudoku_board.iloc[i]))
-
         cols = []
         for i in range(0, 9):
             cols.append(self.allowed_in_col(self.sudoku_board[[i]]))
-
         for i in range(0, 9):
             for j in range(0, 9):
                 if self.sudoku_board.loc[i][j] is '-':

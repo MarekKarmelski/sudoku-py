@@ -12,7 +12,7 @@ class ResolveSudoku:
     def run(self):
         """Run application"""
         sr = SudokuResolver()
-        sr.load_board('boards/board1.csv')
+        sr.load_board('boards/board3.csv')
         sr.resolve_board()
         pprint(sr.get_board())
         pass
